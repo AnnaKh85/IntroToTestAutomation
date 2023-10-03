@@ -9,6 +9,10 @@ public class MontyHallGame {
     private Random rand;
 
     public MontyHallGame(int totalGames) {
+        if (totalGames <= 0) {
+            throw new IllegalArgumentException("Total games must be a positive integer.");
+        }
+
         this.totalGames = totalGames;
         this.switchWins = 0;
         this.stayWins = 0;
